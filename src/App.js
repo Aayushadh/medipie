@@ -1,57 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Dashboard from "./screens/Dashboard";
+import UserProfile from "./screens/UserProfile";
+import { ChakraProvider } from "@chakra-ui/react";
+import Home from "./screens/Home";
+import LoginScreen from "./screens/LoginScreen";
+import Navbar from "./components/Navbar";
+import CreateScreen from "./screens/CreateScreen";
 
-function App() {
+function App({ match }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <ChakraProvider>
+      <div className="App">
+          <Router>
+      <Navbar/>
+            <Routes>
+              <Route path="/" element={<Home/>} exact/>
+              <Route path="/login" element={<LoginScreen/>} exact/>
+              <Route path="/create" element={<CreateScreen/>} exact/>
+              <Route path="/dashboard/" element={<Dashboard />} exact />
+              <Route path="/dashboard/:id/" element={<UserProfile />} />
+            </Routes>
+          </Router>
+      </div>
+    </ChakraProvider>
   );
 }
 
