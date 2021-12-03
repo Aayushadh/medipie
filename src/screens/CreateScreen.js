@@ -187,10 +187,6 @@ const CreateScreen = () => {
             <br />
 
             <FormControl id="submit">
-              <FormHelperText>
-                <a href="login">Already have an account ?</a>
-              </FormHelperText>
-              <br />
               <Input
                 type="submit"
                 borderColor="black"
