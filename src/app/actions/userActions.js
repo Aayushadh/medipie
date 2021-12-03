@@ -8,7 +8,7 @@ export const listUsers = () => async (
 
         dispatch({ type: USER_LIST_REQUEST })
         const { data } = await axios.get(
-            `http://jsonplaceholder.typicode.com/users`
+            `https://jsonplaceholder.typicode.com/users`
         )
         dispatch({
             type: USER_LIST_SUCCESS,
