@@ -18,11 +18,11 @@ function App({ match }) {
           <Router>
       <Navbar/>
             <Routes>
-              <Route path="/" element={<Home/>} exact/>
-              <Route path="/login" element={<LoginScreen/>} exact/>
-              <Route path="/create" element={<CreateScreen/>} exact/>
-              <Route path="/dashboard/" element={<Dashboard />} exact />
-              <Route path="/dashboard/:id/" element={<UserProfile />} />
+              <Route path="" element={<Home/>} exact/>
+              <Route path="login" element={<LoginScreen/>} exact/>
+              <Route path="create" element={<CreateScreen/>} exact/>
+              <Route path="dashboard/" element={<Dashboard />} exact />
+              <Route path="dashboard/:id/" element={<UserProfile />} />
             </Routes>
           </Router>
       </div>
