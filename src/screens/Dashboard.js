@@ -31,7 +31,7 @@ const Dashboard = () => {
     <Center>
       <Stack>
         <Center>
-          {error.message != undefined && <h1>{error.message}</h1>}
+          {error!=undefined && <h1>{error.message}</h1>}
           <Heading as="h1">Dashboard</Heading>
         </Center>
         <div style={{ overflowX: "auto" }}>
