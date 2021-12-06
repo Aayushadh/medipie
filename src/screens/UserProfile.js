@@ -2,9 +2,11 @@ import { Avatar } from "@chakra-ui/avatar";
 import { Box, Center, Text } from "@chakra-ui/layout";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router";
-import { getUserProfile } from "../app/actions/userActions";
 import ProfileLoader from "../components/ProfileLoader";
+import { useNavigate, useParams } from "react-router";
+
+// import { getUserProfile } from "../app/actions/userActions";
+import { getUserProfile } from "../app/slices/userProfileSlice";
 
 const UserProfile = () => {
   const params = useParams();

@@ -1,8 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { userListReducer, userProfileReducer } from './reducers/userReducers'
-
+// import { userProfileReducer,userListReducer} from './reducers/userReducers'
+import userListReducer from './slices/userSlice'
+import userProfileReducer from './slices/userProfileSlice'
 // list of reducerrs
 
 
@@ -10,7 +11,7 @@ const reducer = combineReducers({
     userList:userListReducer,
     userProfile:userProfileReducer,
 })
-
+ 
 
 const initialState = {
 }
